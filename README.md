@@ -3,7 +3,7 @@
 Site institucional da **Patrícia Lima**, especialista em furo humanizado, correção de lóbulo (lobuloplastia) e otomodelação, com atendimento no Grande ABC e em São Paulo.
 
 - **Cliente:** Patrícia Lima
-- **Site publicado:** https://raiugami.github.io/patricia-harmonia-das-orelhas/
+- **Site publicado:** https://patricia.imaguiar.com.br/
 - **Instagram:** [@paty.harmoniadasorelhas](https://www.instagram.com/paty.harmoniadasorelhas/)
 
 ## Sobre o projeto
