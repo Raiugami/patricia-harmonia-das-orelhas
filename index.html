@@ -127,6 +127,17 @@ nav a:hover{color:var(--roxo)}
 .promo .mega{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.6rem);text-align:center;line-height:1.05;position:relative;z-index:1}
 .promo .mega small{display:block;font-family:'Poppins';font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;opacity:.75;margin-bottom:8px}
 
+
+/* google */
+.local .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
+.local .mapa{border-radius:var(--raio);overflow:hidden;box-shadow:var(--sombra);aspect-ratio:4/3;background:var(--lilas-cl)}
+.local iframe{width:100%;height:100%;border:0}
+.local p{color:var(--muted);margin:14px 0 26px}
+.estrelas{color:#f5b301;font-size:1.7rem;letter-spacing:6px;margin-bottom:10px}
+.btn-g{background:#fff;color:var(--roxo-esc);border:1.5px solid var(--lilas)}
+.btn-g:hover{background:var(--roxo);color:#fff}
+@media(max-width:860px){.local .wrap{grid-template-columns:1fr}}
+
 /* faq */
 .faq{max-width:780px;margin-inline:auto;display:grid;gap:14px}
 details{background:#fff;border-radius:16px;border:1px solid #eadfe6;padding:20px 26px;box-shadow:0 8px 24px -16px rgba(94,68,97,.3)}
@@ -228,7 +239,19 @@ footer a{color:#fff;text-decoration:underline}
         }
       }
     ]
-  }
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Santo André",
+    "addressRegion": "SP",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -23.6838032,
+    "longitude": -46.5152596
+  },
+  "hasMap": "https://maps.app.goo.gl/49MzZXzfo5XeDBi1A"
 }
 </script>
 </head>
@@ -242,6 +265,7 @@ footer a{color:#fff;text-decoration:underline}
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#processo">Como funciona</a></li>
+        <li><a href="#avaliacoes">Avaliações</a></li>
         <li><a href="#duvidas">Dúvidas</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
@@ -378,6 +402,22 @@ footer a{color:#fff;text-decoration:underline}
   </div>
 </section>
 
+<section class="local" id="avaliacoes" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Google</span>
+      <h2>Atendeu você bem? Conte pra gente</h2>
+      <div class="estrelas" aria-hidden="true">★★★★★</div>
+      <p>Sua avaliação no Google ajuda outras mães e clientes a encontrarem um atendimento de confiança — e leva menos de um minuto.</p>
+      <div class="cta">
+        <a class="btn btn-wa" style="background:var(--roxo);box-shadow:none" href="https://search.google.com/local/writereview?placeid=ChIJTSmXS_zYf6URA1VXc86fHr4" target="_blank" rel="noopener">★ Avaliar no Google</a>
+        <a class="btn btn-g" href="https://maps.app.goo.gl/49MzZXzfo5XeDBi1A" target="_blank" rel="noopener">Como chegar</a>
+      </div>
+    </div>
+    <div class="mapa rv"><iframe title="Localização no Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=-23.6838032,-46.5152596&z=15&output=embed"></iframe></div>
+  </div>
+</section>
+
 <section id="duvidas" style="padding-top:20px">
   <div class="wrap">
     <div class="titulo rv"><span class="eyebrow">Dúvidas frequentes</span><h2>Antes de agendar</h2></div>
@@ -397,7 +437,7 @@ footer a{color:#fff;text-decoration:underline}
     <h2>Pronta para o seu momento?</h2>
     <p style="color:var(--muted);margin-top:14px">Agende seu horário e transforme sua experiência.</p>
     <div class="info">
-      <div><b>📍 Região</b>Grande ABC e São Paulo</div>
+      <div><b>📍 Onde estamos</b><a href="https://maps.app.goo.gl/49MzZXzfo5XeDBi1A" target="_blank" rel="noopener">Vila Helena, Santo André – SP</a></div>
       <div><b>💬 WhatsApp</b>Atendimento com hora marcada</div>
       <div><b>📸 Instagram</b><a href="https://www.instagram.com/paty.harmoniadasorelhas/" target="_blank" rel="noopener">@paty.harmoniadasorelhas</a></div>
     </div>
