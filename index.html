@@ -36,11 +36,11 @@ section{padding:96px 0}
 header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.3s}
 header.solid{background:rgba(251,247,246,.92);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(94,68,97,.08)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
-.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--roxo-esc);display:flex;align-items:center;gap:10px}
+.logo{flex:none;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--roxo-esc);display:flex;align-items:center;gap:10px}
 .logo img{height:46px;width:auto}
-.logo span{display:flex;flex-direction:column;line-height:1.05;font-size:1.25rem;letter-spacing:.04em;text-transform:uppercase;font-weight:500}
+.logo span{white-space:nowrap;display:flex;flex-direction:column;line-height:1.05;font-size:1.25rem;letter-spacing:.04em;text-transform:uppercase;font-weight:500}
 .logo small{font-family:'Poppins',sans-serif;font-weight:300;font-size:.58rem;letter-spacing:.32em;color:var(--rosa);margin-top:4px}
-nav ul{display:flex;gap:30px;list-style:none;font-size:.9rem}
+nav ul{display:flex;gap:26px;white-space:nowrap;list-style:none;font-size:.9rem}
 nav a:hover{color:var(--roxo)}
 .nav .btn{padding:10px 22px;font-size:.88rem}
 .burger{display:none;background:none;border:0;font-size:1.7rem;color:var(--roxo-esc)}
@@ -99,6 +99,25 @@ nav a:hover{color:var(--roxo)}
 .destaque .ic{background:rgba(255,255,255,.15)}
 .tag{position:absolute;top:18px;right:18px;background:var(--lilas);color:var(--roxo-esc);font-size:.7rem;font-weight:600;padding:4px 12px;border-radius:99px}
 
+
+/* antes e depois */
+.resultados{background:var(--creme)}
+.ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,420px));justify-content:center;gap:24px}
+.ba{position:relative;margin:0;border-radius:var(--raio);overflow:hidden;box-shadow:var(--sombra);aspect-ratio:4/5;--pos:50%;background:var(--lilas-cl);touch-action:pan-y;user-select:none}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba .ba-antes{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.ba-linha{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 12px rgba(0,0,0,.25);pointer-events:none}
+.ba-linha::after{content:"↔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#fff;color:var(--roxo);display:grid;place-items:center;font-size:1.1rem;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.ba-tag{position:absolute;top:14px;padding:5px 14px;border-radius:99px;background:rgba(63,44,66,.8);color:#fff;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;pointer-events:none}
+.ba-tag.antes{left:14px}.ba-tag.depois{right:14px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba input:focus-visible+.ba-linha::after,.ba:has(input:focus-visible) .ba-linha::after{outline:3px solid var(--rosa);outline-offset:2px}
+.ba-vazio{grid-column:1/-1;text-align:center;background:#fff;border:1.5px dashed var(--lilas);border-radius:var(--raio);padding:48px 28px}
+.ba-vazio .ic{font-size:2.2rem;margin-bottom:10px}
+.ba-vazio h3{font-size:1.7rem;margin-bottom:8px}
+.ba-vazio p{color:var(--muted);max-width:460px;margin:0 auto 22px;font-size:.95rem}
+.ba-aviso{text-align:center;color:var(--muted);font-size:.8rem;margin-top:22px}
+
 /* sobre */
 .sobre{background:var(--lilas-cl)}
 .sobre .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
@@ -136,6 +155,14 @@ nav a:hover{color:var(--roxo)}
 .estrelas{color:#f5b301;font-size:1.7rem;letter-spacing:6px;margin-bottom:10px}
 .btn-g{background:#fff;color:var(--roxo-esc);border:1.5px solid var(--lilas)}
 .btn-g:hover{background:var(--roxo);color:#fff}
+@media(max-width:1020px){nav ul{gap:16px;font-size:.84rem}}
+@media(max-width:940px){
+  .burger{display:block}
+  nav{position:absolute;top:74px;left:0;right:0;background:var(--creme);padding:20px;display:none;box-shadow:0 20px 30px -20px rgba(0,0,0,.2)}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:18px;font-size:.9rem}
+  .nav>.btn{display:none}
+}
 @media(max-width:860px){.local .wrap{grid-template-columns:1fr}}
 
 /* faq */
@@ -256,6 +283,7 @@ footer a{color:#fff;text-decoration:underline}
     <nav id="menu">
       <ul>
         <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#resultados">Resultados</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#processo">Como funciona</a></li>
         <li><a href="#avaliacoes">Avaliações</a></li>
@@ -327,6 +355,34 @@ footer a{color:#fff;text-decoration:underline}
         <a href="https://api.whatsapp.com/send?phone=5511916868331&text=Ol%C3%A1%2C%20Patr%C3%ADcia!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">Agendar →</a>
       </article>
     </div>
+  </div>
+</section>
+
+<section class="resultados" id="resultados">
+  <div class="wrap">
+    <div class="titulo rv">
+      <span class="eyebrow">Resultados</span>
+      <h2>Antes e depois da lobuloplastia</h2>
+      <p>Veja a transformação de quem recuperou os lóbulos. Só mostramos imagens de clientes que autorizaram o uso.</p>
+    </div>
+    <div class="ba-grid rv">
+      <!-- Para adicionar um caso, copie o bloco abaixo e troque as imagens (WebP, mesma proporção 4:5):
+      <figure class="ba">
+        <img class="ba-depois" src="img/resultados/caso-01-depois.webp" alt="Lóbulo da orelha depois da lobuloplastia" loading="lazy" width="800" height="1000">
+        <img class="ba-antes" src="img/resultados/caso-01-antes.webp" alt="Lóbulo da orelha rasgado antes da lobuloplastia" loading="lazy" width="800" height="1000">
+        <span class="ba-tag antes">Antes</span><span class="ba-tag depois">Depois</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar o antes e o depois">
+        <span class="ba-linha"></span>
+      </figure>
+      E apague o bloco "ba-vazio" abaixo. -->
+      <div class="ba-vazio">
+        <div class="ic">✨</div>
+        <h3>Em breve, resultados reais aqui</h3>
+        <p>Quer ver como ficou o trabalho em outras clientes? Chame no WhatsApp e a Patrícia te mostra exemplos de lobuloplastia.</p>
+        <a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=5511916868331&text=Ol%C3%A1%2C%20Patr%C3%ADcia!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">Ver exemplos no WhatsApp</a>
+      </div>
+    </div>
+    <p class="ba-aviso">Os resultados variam de pessoa para pessoa.</p>
   </div>
 </section>
 
@@ -448,6 +504,8 @@ m.querySelectorAll('a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
 document.getElementById('ano').textContent=new Date().getFullYear();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+document.querySelectorAll('.ba input').forEach(r=>r.addEventListener('input',()=>r.closest('.ba').style.setProperty('--pos',r.value+'%')));
 </script>
 </body>
 </html>
