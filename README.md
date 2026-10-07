@@ -44,3 +44,7 @@ O site é publicado automaticamente pelo GitHub Pages a partir da branch `main`,
 ## Observações
 
 As fotos do site foram selecionadas do perfil público da profissional no Instagram. As fotos de atendimento são usadas como ilustração, não como documentação clínica.
+
+## Antes e depois da lobuloplastia
+
+A seção `#resultados` mostra um comparador com divisor. Enquanto não há fotos, aparece um aviso "Em breve". Para adicionar um caso: salve as imagens (WebP, proporção 4:5) em `img/resultados/`, copie o bloco `<figure class="ba">` que está comentado em `index.html` e remova o bloco `ba-vazio`. Use só fotos de clientes que autorizaram.
