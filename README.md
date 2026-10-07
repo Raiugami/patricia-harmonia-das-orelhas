@@ -1,6 +1,6 @@
 # Harmonia das Orelhas
 
-Site institucional da **Patrícia Lima**, especialista em furo humanizado, correção de lóbulo (lobuloplastia) e otomodelação, com atendimento no Grande ABC e em São Paulo.
+Site institucional da **Patrícia Lima**, especialista em furo humanizado, correção de lóbulo (lobuloplastia), com atendimento no Grande ABC e em São Paulo.
 
 - **Cliente:** Patrícia Lima
 - **Site publicado:** https://patricia.imaguiar.com.br/
