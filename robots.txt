@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://patricia.imaguiar.com.br/sitemap.xml
+Sitemap: https://drpatricialima.com.br/sitemap.xml
