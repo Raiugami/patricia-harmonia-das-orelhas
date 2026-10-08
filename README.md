@@ -3,7 +3,7 @@
 Site institucional da **Patrícia Lima**, especialista em furo humanizado, correção de lóbulo (lobuloplastia), com atendimento no Grande ABC e em São Paulo.
 
 - **Cliente:** Patrícia Lima
-- **Site publicado:** https://patricia.imaguiar.com.br/
+- **Site publicado:** https://drpatricialima.com.br/
 - **Instagram:** [@paty.harmoniadasorelhas](https://www.instagram.com/paty.harmoniadasorelhas/)
 
 ## Sobre o projeto
