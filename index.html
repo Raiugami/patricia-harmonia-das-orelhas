@@ -102,20 +102,15 @@ nav a:hover{color:var(--roxo)}
 
 /* antes e depois */
 .resultados{background:var(--creme)}
-.ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,420px));justify-content:center;gap:24px}
-.ba{position:relative;margin:0;border-radius:var(--raio);overflow:hidden;box-shadow:var(--sombra);aspect-ratio:4/5;--pos:50%;background:var(--lilas-cl);touch-action:pan-y;user-select:none}
-.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
-.ba .ba-antes{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
-.ba-linha{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 12px rgba(0,0,0,.25);pointer-events:none}
-.ba-linha::after{content:"↔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#fff;color:var(--roxo);display:grid;place-items:center;font-size:1.1rem;box-shadow:0 6px 18px rgba(0,0,0,.25)}
-.ba-tag{position:absolute;top:14px;padding:5px 14px;border-radius:99px;background:rgba(63,44,66,.8);color:#fff;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;pointer-events:none}
-.ba-tag.antes{left:14px}.ba-tag.depois{right:14px}
-.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
-.ba input:focus-visible+.ba-linha::after,.ba:has(input:focus-visible) .ba-linha::after{outline:3px solid var(--rosa);outline-offset:2px}
-.ba-vazio{grid-column:1/-1;text-align:center;background:#fff;border:1.5px dashed var(--lilas);border-radius:var(--raio);padding:48px 28px}
-.ba-vazio .ic{font-size:2.2rem;margin-bottom:10px}
-.ba-vazio h3{font-size:1.7rem;margin-bottom:8px}
-.ba-vazio p{color:var(--muted);max-width:460px;margin:0 auto 22px;font-size:.95rem}
+.casos{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:880px;margin-inline:auto}
+@media(max-width:640px){.casos{grid-template-columns:1fr}}
+.caso{background:#fff;border-radius:var(--raio);padding:12px;box-shadow:var(--sombra);border:1px solid #eadfe6;margin:0}
+.caso .par{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.caso .par div{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:1}
+.caso img{width:100%;height:100%;object-fit:cover}
+.caso span{position:absolute;left:8px;bottom:8px;padding:4px 12px;border-radius:99px;background:rgba(63,44,66,.82);color:#fff;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}
+.caso .depois span{background:var(--rosa)}
+.ba-cta{text-align:center;margin-top:34px}
 .ba-aviso{text-align:center;color:var(--muted);font-size:.8rem;margin-top:22px}
 
 /* sobre */
@@ -365,23 +360,25 @@ footer a{color:#fff;text-decoration:underline}
       <h2>Antes e depois da lobuloplastia</h2>
       <p>Veja a transformação de quem recuperou os lóbulos. Só mostramos imagens de clientes que autorizaram o uso.</p>
     </div>
-    <div class="ba-grid rv">
-      <!-- Para adicionar um caso, copie o bloco abaixo e troque as imagens (WebP, mesma proporção 4:5):
-      <figure class="ba">
-        <img class="ba-depois" src="img/resultados/caso-01-depois.webp" alt="Lóbulo da orelha depois da lobuloplastia" loading="lazy" width="800" height="1000">
-        <img class="ba-antes" src="img/resultados/caso-01-antes.webp" alt="Lóbulo da orelha rasgado antes da lobuloplastia" loading="lazy" width="800" height="1000">
-        <span class="ba-tag antes">Antes</span><span class="ba-tag depois">Depois</span>
-        <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar o antes e o depois">
-        <span class="ba-linha"></span>
-      </figure>
-      E apague o bloco "ba-vazio" abaixo. -->
-      <div class="ba-vazio">
-        <div class="ic">✨</div>
-        <h3>Em breve, resultados reais aqui</h3>
-        <p>Quer ver como ficou o trabalho em outras clientes? Chame no WhatsApp e a Patrícia te mostra exemplos de lobuloplastia.</p>
-        <a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=5511916868331&text=Ol%C3%A1%2C%20Patr%C3%ADcia!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">Ver exemplos no WhatsApp</a>
-      </div>
+    <div class="casos">
+      <figure class="caso rv"><div class="par">
+        <div><img src="img/resultados/caso-01-antes.webp" alt="Lóbulo da orelha rasgado antes da lobuloplastia – caso 1" loading="lazy" width="560" height="560"><span>Antes</span></div>
+        <div class="depois"><img src="img/resultados/caso-01-depois.webp" alt="Lóbulo da orelha recuperado com brinco depois da lobuloplastia – caso 1" loading="lazy" width="560" height="560"><span>Depois</span></div>
+      </div></figure>
+      <figure class="caso rv"><div class="par">
+        <div><img src="img/resultados/caso-02-antes.webp" alt="Lóbulo da orelha rasgado antes da lobuloplastia – caso 2" loading="lazy" width="560" height="560"><span>Antes</span></div>
+        <div class="depois"><img src="img/resultados/caso-02-depois.webp" alt="Lóbulo da orelha recuperado com brinco depois da lobuloplastia – caso 2" loading="lazy" width="560" height="560"><span>Depois</span></div>
+      </div></figure>
+      <figure class="caso rv"><div class="par">
+        <div><img src="img/resultados/caso-03-antes.webp" alt="Lóbulo da orelha rasgado antes da lobuloplastia – caso 3" loading="lazy" width="560" height="560"><span>Antes</span></div>
+        <div class="depois"><img src="img/resultados/caso-03-depois.webp" alt="Lóbulo da orelha recuperado com brinco depois da lobuloplastia – caso 3" loading="lazy" width="560" height="560"><span>Depois</span></div>
+      </div></figure>
+      <figure class="caso rv"><div class="par">
+        <div><img src="img/resultados/caso-04-antes.webp" alt="Lóbulo da orelha rasgado antes da lobuloplastia – caso 4" loading="lazy" width="560" height="560"><span>Antes</span></div>
+        <div class="depois"><img src="img/resultados/caso-04-depois.webp" alt="Lóbulo da orelha recuperado com brinco depois da lobuloplastia – caso 4" loading="lazy" width="560" height="560"><span>Depois</span></div>
+      </div></figure>
     </div>
+    <div class="ba-cta rv"><a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=5511916868331&text=Ol%C3%A1%2C%20Patr%C3%ADcia!%20Vim%20pelo%20site%20e%20quero%20saber%20sobre%20a%20lobuloplastia." target="_blank" rel="noopener">Quero recuperar meus lóbulos</a></div>
     <p class="ba-aviso">Os resultados variam de pessoa para pessoa.</p>
   </div>
 </section>
@@ -505,7 +502,6 @@ document.getElementById('ano').textContent=new Date().getFullYear();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
-document.querySelectorAll('.ba input').forEach(r=>r.addEventListener('input',()=>r.closest('.ba').style.setProperty('--pos',r.value+'%')));
 </script>
 </body>
 </html>
