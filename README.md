@@ -47,4 +47,4 @@ As fotos do site foram selecionadas do perfil público da profissional no Instag
 
 ## Antes e depois da lobuloplastia
 
-A seção `#resultados` mostra um comparador com divisor. Enquanto não há fotos, aparece um aviso "Em breve". Para adicionar um caso: salve as imagens (WebP, proporção 4:5) em `img/resultados/`, copie o bloco `<figure class="ba">` que está comentado em `index.html` e remova o bloco `ba-vazio`. Use só fotos de clientes que autorizaram.
+A seção `#resultados` mostra casos com o antes e o depois lado a lado. As imagens ficam em `img/resultados/` (`caso-0N-antes.webp` e `caso-0N-depois.webp`, quadradas, 560 px). Para adicionar um caso, copie um bloco `<figure class="caso rv">` em `index.html` e troque os arquivos. Use só fotos de clientes que autorizaram.
